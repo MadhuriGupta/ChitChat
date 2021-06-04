@@ -1,0 +1,28 @@
+
+<ion-content>
+<div class = "vcs">
+<ion-img src = "assets/icon/icon.png" class="logo"></ion-img>
+</div>
+<div class = "vcs">
+<h3>My ChitChat</h3>
+<h6>App to post thoughts</h6>
+</div>
+<ion-grid style="width: 75%">
+<ion-row>
+<ion-input type="email" placeholder="your email" [(ngModel)]="email"></ion-input>
+</ion-row>
+<ion-row>
+<ion-input type="password" placeholder="your password" [(ngModel)]="password"></ion-input>
+</ion-row>
+<ion-row>
+<ion-col>
+<ion-button expand = "block" (click)="login()">Login</ion-button>
+</ion-col>
+</ion-row>
+<ion-row>
+<ion-col>
+<ion-button expand = "block" fill='clear' (click)="gotoSignUp()" style="text-transform:none;color:white">Don't have an account?Sign Up</ion-button>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button color='black'></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class = "vcs">
+<ion-img src = "assets/icon/icon.png" class="logo"></ion-img>
+</div>
+<div class = "vcs">
+<h3>My ChitChat</h3>
+<h6>App to post thoughts</h6>
+</div>
+<ion-grid style="width: 75%">
+<ion-row>
+<ion-input type="text" placeholder="your name" [(ngModel)]="name"></ion-input>
+</ion-row>
+<ion-row>
+<ion-input type="email" placeholder="your email" [(ngModel)]="email"></ion-input>
+</ion-row>
+<ion-row>
+<ion-input type="password" placeholder="your password" [(ngModel)]="password"></ion-input>
+</ion-row>
+<ion-row>
+<ion-col>
+<ion-button expand = "block" (click)="signUp()">Sign UP</ion-button>
+</ion-col>
+</ion-row>
+<ion-row>
+<ion-col >
+<ion-button fill='clear' style="text-transform:none;color:white" (click)='goBack()'>Already have an account?Login</ion-button>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>

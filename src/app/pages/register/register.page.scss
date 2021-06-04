@@ -1,0 +1,48 @@
+.logo{
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.vcs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ion-content{
+    --ion-background-color:#22bfa0;
+    align-content: center;
+  }
+  .native-input {
+    padding-left: 20px;
+ }
+
+  ion-row{
+    ion-input{
+        border: solid 1px white;
+        margin-top: 10px;
+        border-radius: 30px;
+        --padding-start:20px
+     }
+ 
+     ion-button {
+        --border-radius: 15px;
+        margin-top: 10px;
+        height: 45px;
+        }
+  }
+
+  .link1{
+      color: white;
+      text-align: center;
+      display: block;
+  }
+  .new-background-color{
+    --background: #22bfa0;
+}
+
+      
+  

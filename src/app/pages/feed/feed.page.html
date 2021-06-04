@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar style="--background:#22bfa0">
+    <ion-title style="color:white">My Chat Feed</ion-title>
+     <ion-buttons slot="primary" >
+    <ion-button color="light" (click)="logout()">
+    <ion-icon slot="icon-only" name="log-out"></ion-icon>
+    </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-row class="rowStyle">
+    <ion-button class="button_style" fill="clear" (click)="presentActionSheet()">
+    <ion-icon slot="icon-only" name="images" ></ion-icon>
+    </ion-button>
+    <ion-input type="text" placeholder="type here" [(ngModel)]="text"></ion-input>
+
+    <ion-button class="button_style" (click)="post()" fill="clear">
+    <ion-icon slot="icon-only" name="send"></ion-icon>
+    </ion-button>
+</ion-row>
+
+<ion-row class="rowStyle" *ngIf="image">
+<ion-card (click)="deleteImage()" class="round-corners">
+<img [src]="image" class="round-corners">
+</ion-card>
+</ion-row>
+
+
+
+<ion-refresher (ionRefresh)="refresh($event)" slot="fixed">
+<ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+<ion-list>
+<ion-item-sliding *ngFor="let post of posts;let i=index">
+<ion-card >
+<ion-item lines='none' class='item'> 
+<div>
+<p class="item_bg">{{post.data().owner_name}} Says</p>
+<p style="margin-top:0px">{{post.data().text}}</p>
+<img [src]="post.data().image" *ngIf="post.data().image" style="width: 100%;object-fit: cover; border-radius: 12px;"> 
+</div>
+
+</ion-item>
+
+<ion-row class="bottom_bar" text-center>
+<ion-col style="padding:0px">
+<ion-button fill='clear' size="small" expand='block' class="bottom_right" (click)="comingSoon()">
+    <ion-icon slot="icon-only" name="thumbs-up" style="font-size:16px"></ion-icon>
+      
+    </ion-button>
+</ion-col>
+<ion-col style="padding:0px">
+<ion-button fill='clear' size="small" expand='block' class="bottom_right" (click)="comingSoon()">
+    <ion-icon slot="icon-only" name="chatbubble-outline" style="font-size:16px"></ion-icon>
+      
+    </ion-button>
+</ion-col>
+<ion-col size=4 style="padding:0px"> 
+<ion-button fill='clear' expand='block' size="small" mode="ios">
+      <span class="wrap">{{ago(post.data().created.toDate())}} ago</span>
+    </ion-button>
+</ion-col>
+</ion-row>
+<ion-item-options side="end" *ngIf="userId==post.data().owner">
+
+    <ion-button fill='clear' expand='block' color="danger" (click)="deletePost(post.id,i)">
+    <ion-icon slot="icon-only" name="trash"></ion-icon>
+      
+    </ion-button>
+</ion-item-options>
+
+</ion-card>
+</ion-item-sliding>
+</ion-list>
+<ion-infinite-scroll (ionInfinite)="loadMorePosts($event)">
+<ion-infinite-scroll-content></ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>
