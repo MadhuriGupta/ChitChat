@@ -14,12 +14,12 @@ import {Network} from '@ionic-native/network/ngx';
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyD9dczeUGeFW_7PjOpDPZGBYvLnhIV1i50",
-  authDomain: "myfeeds-bfaa9.firebaseapp.com",
-  projectId: "myfeeds-bfaa9",
-  storageBucket: "myfeeds-bfaa9.appspot.com",
-  messagingSenderId: "1000374498689",
-  appId: "1:1000374498689:web:14aa9ba7faec83803fe480"
+  apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxx",
+  authDomain: "xxxxxxxxxxxx",
+  projectId: "xxxxxxx",
+  storageBucket: "xxxxxxxxxxxx",
+  messagingSenderId: "xxxxxxxxxx",
+  appId: "xxxxxxxxxxxxxxx"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
